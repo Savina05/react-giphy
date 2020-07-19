@@ -9,7 +9,7 @@ class SearchBar extends Component {
     };
   }
 
-  handleUpdate = (event) => {
+  handleUpdate = (event) => { // arrouw function thanks to babel-plugin-transform-class-properties
     this.setState({
       keyword: event.target.value
     });
@@ -22,7 +22,7 @@ class SearchBar extends Component {
         value={this.state.keyword}
         type="text"
         className="form-control form-search"
-        onChange={this.handleUpdate}
+        onChange={this.handleUpdate} // thanks to babel-plugin-transform-class-properties, otherwhise it would have been this.handleChange.bind(this)
       />
     );
   }
